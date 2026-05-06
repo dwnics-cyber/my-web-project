@@ -170,9 +170,9 @@ footer {
     padding: 80px 49px 40px;
     margin-top: 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 40px;
-    border-top: 1px solid #e0e0e0;
+    position: relative;
 }
 
 footer section {
@@ -211,58 +211,6 @@ footer > p {
     margin-top: 40px;
     padding-top: 40px;
     border-top: 1px solid #e0e0e0;
-}
-
-/* Responsive Design - Tablet */
-@media screen and (max-width: 1200px) {
-    header {
-        padding: 20px 40px;
-    }
-
-    nav a {
-        font-size: 32px;
-    }
-
-    .hero h1 {
-        font-size: 140px;
-        letter-spacing: -8.4px;
-    }
-
-    .content-section {
-        padding: 60px 40px 80px;
-    }
-
-    .section-title {
-        font-size: 90px;
-        letter-spacing: -5.4px;
-    }
-
-    .section-subtitle {
-        font-size: 60px;
-        letter-spacing: -3.6px;
-    }
-
-    .episodes-grid {
-        gap: 60px 80px;
-    }
-
-    .episode-card h2 {
-        font-size: 32px;
-    }
-
-    .episode-card p {
-        font-size: 18px;
-    }
-
-    .bottom-gallery-title {
-        font-size: 90px;
-        letter-spacing: -5.4px;
-    }
-
-    footer {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 60px 40px 40px;
-    }
 }
 
 /* Responsive Design - Mobile Landscape */
