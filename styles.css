@@ -96,6 +96,11 @@ nav a:hover {
 }
 
 .hero h1 {
+    display: block;
+    white-space: pre-line;
+    overflow-wrap: normal;
+    word-break: normal;
+    margin: 0 auto;
     font-size: 200px;
     line-height: 1;
     letter-spacing: -12px;
