@@ -81,7 +81,15 @@ nav a:hover {
 
 #events .hero
 {background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.4) 100%),
-                url('file:///Users/danicawidjaja/Desktop/University/Front-End%20Web/Site%20photos/Untitled-7-04.png') center/cover no-repeat;}
+                url('file:///Users/danicawidjaja/Desktop/University/Front-End%20Web/Site%20photos/events/events.webp') center/cover no-repeat;}
+
+#gallery .hero
+{background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.4) 100%),
+                url('file:///Users/danicawidjaja/Desktop/University/Front-End%20Web/Site%20photos/rs=w_2320,h_1547.webp') center/cover no-repeat;}
+
+#contact .hero
+{background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.4) 100%),
+                url('file:///Users/danicawidjaja/Desktop/University/Front-End%20Web/Site%20photos/events/rs=w_2320.webp') center/cover no-repeat;}
 
 .hero h1 {
     font-size: 200px;
