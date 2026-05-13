@@ -103,7 +103,10 @@ nav a:hover {
     margin: 0 auto;
     font-size: 200px;
     line-height: 1;
-    letter-spacing: -12px;
+    letter-spacing: -4px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
     color: white;
     text-shadow: 4px 5px 6.2px rgba(0,0,0,0.35);
     font-weight: 700;
@@ -113,7 +116,7 @@ nav a:hover {
 .whats-on-button {
     display: block;
     width: fit-content;
-    margin: 0 auto;
+    margin: 15px auto 0;
     background: #699de1;
     color: white;
     font-size: 20px;
@@ -239,8 +242,8 @@ nav a:hover {
     max-width: 1440px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 80px 120px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 80px 60px;
 }
 
 .event-card {
@@ -249,6 +252,7 @@ nav a:hover {
     align-items: center;
     text-align: center;
     gap: 10px;
+    position: relative;
 }
 
 .event-card img {
@@ -262,16 +266,17 @@ nav a:hover {
 }
 
 .event-card h2 {
-    font-size: 40px;
-    line-height: 1.1;
-    letter-spacing: -2.4px;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -1.8px;
     font-weight: 600;
     color: #1e1e1e;
     max-width: 433px;
-    min-height: 113px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0 auto;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    padding: 0 12px;
 }
 
 .event-card h3 {
@@ -293,6 +298,33 @@ nav a:hover {
 
 .more-info:hover {
     color: #699de1;
+}
+
+#info-popup {
+    position: absolute;
+    display: none;
+    min-width: 520px;
+    max-width: 640px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    padding: 36px 36px 32px;
+    color: #1e1e1e;
+    font-size: 16px;
+    line-height: 1.6;
+    z-index: 500;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    outline: none;
+}
+
+#info-popup.visible {
+    display: block;
+    opacity: 1;
+}
+
+#info-popup:focus {
+    outline: none;
 }
 
 /* Booking Section */

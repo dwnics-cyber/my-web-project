@@ -31,59 +31,61 @@
                 <img src="https://placehold.co/468x469/87CEEB/ffffff?text=Event+1" alt="Collecting Modernism">
                 <h2>Collecting Modernism</h2>
                 <h3>Mon, 8 April | Canberra Gallery</h3>
-                <a href="#" class="more-info">MORE INFO</a>
+                <a href="#" class="more-info" data-desc="A guided look at Canberra's modernist collection, with curators sharing stories behind the objects.">MORE INFO</a>
             </article>
 
             <article class="event-card">
                 <img src="https://placehold.co/468x469/87CEEB/ffffff?text=Event+2" alt="Bus Shelter Tour">
                 <h2>Bus Shelter Tour</h2>
                 <h3>Sat, 13 April | ANU</h3>
-                <a href="#" class="more-info">MORE INFO</a>
+                <a href="#" class="more-info" data-desc="Explore the history and design of Canberra's iconic modern bus shelters on a guided walking tour.">MORE INFO</a>
             </article>
 
             <article class="event-card">
                 <img src="https://placehold.co/468x469/87CEEB/ffffff?text=Event+3" alt="Modernist Market">
                 <h2>Modernist Market</h2>
                 <h3>Sun, 14 April | University House</h3>
-                <a href="#" class="more-info">MORE INFO</a>
+                <a href="#" class="more-info" data-desc="A market celebration of modernist design, food, crafts, and exhibition stalls from local makers.">MORE INFO</a>
             </article>
 
             <article class="event-card">
                 <img src="https://placehold.co/468x469/87CEEB/ffffff?text=Event+4" alt="Model Modern Launch and Panel">
                 <h2>Model Modern Launch and Panel</h2>
                 <h3>Tue, 5 May | Location TBA</h3>
-                <a href="#" class="more-info">MORE INFO</a>
+                <a href="#" class="more-info" data-desc="Launch event with a discussion panel on modern design, architecture, and community projects.">MORE INFO</a>
             </article>
 
             <article class="event-card">
                 <img src="https://placehold.co/468x469/87CEEB/ffffff?text=Event+5" alt="Canberra's Round House">
                 <h2>Canberra's Round House</h2>
                 <h3>Wed, 17 May | Round House</h3>
-                <a href="#" class="more-info">MORE INFO</a>
+                <a href="#" class="more-info" data-desc="Discover the architecture and cultural importance of Canberra's historic Round House with a local guide.">MORE INFO</a>
             </article>
 
             <article class="event-card">
                 <img src="https://placehold.co/468x469/87CEEB/ffffff?text=Event+6" alt="Engineering and Infrastructure Tour">
                 <h2>Engineering and Infrastructure Tour</h2>
                 <h3>Sat, 15 July | Lake Burley Griffin</h3>
-                <a href="#" class="more-info">MORE INFO</a>
+                <a href="#" class="more-info" data-desc="A specialist tour of Canberra's modern engineering landmarks around Lake Burley Griffin.">MORE INFO</a>
             </article>
 
             <article class="event-card">
                 <img src="https://placehold.co/468x469/87CEEB/ffffff?text=Event+7" alt="Art and Architecture">
                 <h2>Art and Architecture</h2>
                 <h3>Sat, 4 August | Parliamentary Zone</h3>
-                <a href="#" class="more-info">MORE INFO</a>
+                <a href="#" class="more-info" data-desc="An exploration of the modern art and architecture found in the Parliamentary Zone precinct.">MORE INFO</a>
             </article>
 
             <article class="event-card">
                 <img src="https://placehold.co/468x469/87CEEB/ffffff?text=Event+8" alt="The Tunnels of University">
                 <h2>The Tunnels of University</h2>
                 <h3>11, 17, 18 Aug | ANU</h3>
-                <a href="#" class="more-info">MORE INFO</a>
+                <a href="#" class="more-info" data-desc="Investigate the hidden tunnels and modern stories beneath the ANU campus on this unique tour.">MORE INFO</a>
             </article>
         </div>
     </section>
+
+    <div id="info-popup" contenteditable="true" aria-label="Event details"></div>
 
     <section class="booking-section">
         <h1>Book Here</h1>
@@ -148,5 +150,43 @@
 
         <p>&copy; This website was produced by students in the Faculty of Arts & Design, University of Canberra, 2026</p>
     </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const popup = document.getElementById('info-popup');
+      const buttons = document.querySelectorAll('.more-info');
+
+      const hidePopup = () => {
+        popup.classList.remove('visible');
+        popup.style.display = 'none';
+      };
+
+      buttons.forEach(button => {
+        button.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          const text = button.dataset.desc || 'Edit this event description.';
+          const rect = button.getBoundingClientRect();
+
+          popup.textContent = text;
+          popup.style.left = `${rect.left + rect.width / 2}px`;
+          popup.style.top = `${rect.top + window.scrollY - 12}px`;
+          popup.style.transform = 'translate(-50%, -100%)';
+          popup.style.display = 'block';
+          popup.classList.add('visible');
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (!event.target.closest('.more-info') && !event.target.closest('#info-popup')) {
+          hidePopup();
+        }
+      });
+
+      popup.addEventListener('click', event => {
+        event.stopPropagation();
+      });
+    });
+    </script>
 </body>
 </html>
