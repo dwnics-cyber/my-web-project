@@ -101,22 +101,24 @@ nav a:hover {
     overflow-wrap: normal;
     word-break: normal;
     margin: 0 auto;
-    font-size: 200px;
+    font-size: 150px;
     line-height: 1;
-    letter-spacing: -4px;
+    letter-spacing: -6%;
     white-space: normal;
     overflow-wrap: break-word;
     word-break: break-word;
     color: white;
     text-shadow: 4px 5px 6.2px rgba(0,0,0,0.35);
-    font-weight: 700;
+    font-family: "ivyora-text", serif;
+    font-weight: 500;
+    font-style: normal;
     text-align: center;
 }
 
 .whats-on-button {
     display: block;
     width: fit-content;
-    margin: 15px auto 0;
+    margin: 10px auto 0;
     background: #699de1;
     color: white;
     font-size: 20px;
@@ -253,6 +255,8 @@ nav a:hover {
     text-align: center;
     gap: 10px;
     position: relative;
+    overflow: hidden;
+    border-radius: 37px;
 }
 
 .event-card img {
@@ -263,6 +267,11 @@ nav a:hover {
     border-radius: 37px;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
     margin-bottom: 10px;
+    transition: transform 0.4s ease;
+}
+
+.event-card img:hover {
+    transform: scale(1.05);
 }
 
 .event-card h2 {
@@ -445,6 +454,8 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow: hidden;
+    border-radius: 16px;
 }
 
 .episode-card img {
@@ -454,6 +465,11 @@ nav a:hover {
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+}
+
+.episode-card img:hover {
+    transform: scale(1.05);
 }
 
 .episode-card h2 {
@@ -631,8 +647,8 @@ footer > p {
 }
 
 footer img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: auto
 }
 
 /* Responsive Design */
